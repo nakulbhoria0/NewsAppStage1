@@ -29,6 +29,7 @@ class NewsAdapter extends ArrayAdapter<News> {
         News currentNews = getItem(position);
 
         String publicationDate = currentNews.getTime();
+        String sectionName = currentNews.getSection();
         String dateInDays = null;
         String timeInHours = null;
 
@@ -44,10 +45,12 @@ class NewsAdapter extends ArrayAdapter<News> {
         }
         String tmpDate = "Date: " + dateInDays + ", Time: " + timeInHours;
 
+        TextView sectionView = view.findViewById(R.id.section);
         TextView author = view.findViewById(R.id.author);
         TextView title = view.findViewById(R.id.title);
         TextView date = view.findViewById(R.id.date);
 
+        sectionView.setText(sectionName);
         author.setText(currentNews.getAuthorName());
         title.setText(currentNews.getTitle());
         date.setText(tmpDate);

@@ -145,11 +145,12 @@ public class QueryNews {
                     authorName += "Not found";
                 }
 
+                String sectionName = result.getString("sectionName");
                 String url = result.getString("webUrl");
                 String title = result.getString("webTitle");
                 String time = result.getString("webPublicationDate");
 
-                News currentNews = new News(title, url, time, authorName);
+                News currentNews = new News(title, url, time, authorName, sectionName);
 
 
 

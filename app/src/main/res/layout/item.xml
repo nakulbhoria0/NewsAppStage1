@@ -27,5 +27,12 @@
         android:textAppearance="?android:textAppearanceSmall"
         tools:text="Author" />
 
+    <TextView
+        android:id="@+id/section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceSmall"
+        tools:text="Section" />
+
 
 </LinearLayout>
