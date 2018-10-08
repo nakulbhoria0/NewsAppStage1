@@ -134,12 +134,25 @@ public class QueryNews {
             for (int i = 0; i < resultsArray.length(); i++) {
 
                 JSONObject result = resultsArray.getJSONObject(i);
+                JSONArray tags = result.getJSONArray("tags");
+                JSONObject author = null;
+                String authorName = "Author Name: ";
+
+                if (tags != null && tags.length() > 0) {
+                    author = tags.getJSONObject(0);
+                    authorName += author.getString("webTitle");
+                } else {
+                    authorName += "Not found";
+                }
 
                 String url = result.getString("webUrl");
                 String title = result.getString("webTitle");
                 String time = result.getString("webPublicationDate");
 
-                News currentNews = new News(title, url, time);
+                News currentNews = new News(title, url, time, authorName);
+
+
+
                 news.add(currentNews);
             }
         } catch (JSONException e) {

@@ -20,7 +20,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<News>> {
 
     private static final String GUARDIAN_REQUEST_URL =
-            "https://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=2018-01-01&api-key=test";
+            "https://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=2018-01-01&show-tags=contributor&api-key=test";
     private NewsAdapter adapter;
     private TextView empty;
     private ConnectivityManager connectivityManager;
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         List<News> news = new ArrayList<>();
 
         // Find a reference to the {@link ListView} in the layout
-        ListView newsListView = (ListView) findViewById(R.id.list);
+        ListView newsListView = findViewById(R.id.list);
 
         newsListView.setEmptyView(empty);
 

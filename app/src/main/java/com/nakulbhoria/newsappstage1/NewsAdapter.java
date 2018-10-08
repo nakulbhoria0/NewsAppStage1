@@ -30,23 +30,25 @@ class NewsAdapter extends ArrayAdapter<News> {
 
         String publicationDate = currentNews.getTime();
         String dateInDays = null;
-        String timeInHourse = null;
+        String timeInHours = null;
 
         if (publicationDate.contains(TIME_SEPARATOR)) {
             String[] parts = publicationDate.split(TIME_SEPARATOR);
             dateInDays = parts[0];
-            String tempTimeInHourse = parts[1];
+            String tempTimeInHours = parts[1];
 
-            if(tempTimeInHourse.contains("Z")){
-                String[] partsTime = tempTimeInHourse.split("Z");
-                timeInHourse = partsTime[0];
+            if (tempTimeInHours.contains("Z")) {
+                String[] partsTime = tempTimeInHours.split("Z");
+                timeInHours = partsTime[0];
             }
         }
-        String tmpDate = dateInDays + " " + timeInHourse;
+        String tmpDate = "Date: " + dateInDays + ", Time: " + timeInHours;
 
+        TextView author = view.findViewById(R.id.author);
         TextView title = view.findViewById(R.id.title);
         TextView date = view.findViewById(R.id.date);
 
+        author.setText(currentNews.getAuthorName());
         title.setText(currentNews.getTitle());
         date.setText(tmpDate);
 
