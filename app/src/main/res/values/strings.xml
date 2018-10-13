@@ -1,3 +1,51 @@
 <resources>
-    <string name="app_name">News App Stage 1</string>
+
+    <string-array name="settings_order_by_labels">
+        <item>@string/settings_order_by_oldest_label</item>
+        <item>@string/settings_order_by_most_recent_label</item>
+        <item>@string/settings_order_by_relevance_label</item>
+    </string-array>
+
+    <string-array name="settings_order_by_values">
+        <item>@string/settings_order_by_oldest_value</item>
+        <item>@string/settings_order_by_most_recent_value</item>
+        <item>@string/settings_order_by_relevance_value</item>
+    </string-array>
+
+    <string-array name="settings_topics_labels">
+        <item>@string/settings_news_topic_politics_label</item>
+        <item>@string/settings_news_topic_technology_label</item>
+        <item>@string/settings_news_topic_games_label</item>
+    </string-array>
+    <string-array name="settings_topics_values">
+        <item>@string/settings_news_topic_politics_value</item>
+        <item>@string/settings_news_topic_technology_value</item>
+        <item>@string/settings_news_topic_games_value</item>
+    </string-array>
+
+    <string name="app_name">News App</string>
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_title">News Settings</string>
+    <string name="settings_news_topic_label">News Topic</string>
+    <string name="settings_news_topic_key" translatable="false">news_topic</string>
+    <string name="settings_news_topic_default" translatable="false">technology</string>
+    <string name="settings_news_topic_politics_label">Politics</string>
+    <string name="settings_news_topic_technology_label">Technology</string>
+    <string name="settings_news_topic_games_label">Games</string>
+    <string name="settings_news_topic_politics_value">politics</string>
+    <string name="settings_news_topic_technology_value">technology</string>
+    <string name="settings_news_topic_games_value">games</string>
+
+
+    <string name="settings_order_by_label">Order By</string>
+    <string name="settings_order_by_key" translatable="false">order_by</string>
+    <string name="settings_order_by_default" translatable="false">@string/settings_order_by_oldest_value</string>
+    <string name="settings_order_by_oldest_value" translatable="false">oldest</string>
+    <string name="settings_order_by_oldest_label">Oldest</string>
+    <string name="settings_order_by_relevance_label">Relevance</string>
+    <string name="settings_order_by_relevance_value">relevance</string>
+    <string name="settings_order_by_most_recent_label">Most Recent</string>
+    <string name="settings_order_by_most_recent_value" translatable="false">time</string>
+    <string name="no_internet">No Internet connection</string>
+    <string name="no_news">No News found</string>
 </resources>
