@@ -16,7 +16,8 @@ public class NewsLoader extends AsyncTaskLoader<List<News>> {
     @Override
     public List<News> loadInBackground() {
 
-        List<News> news = QueryNews.fetchNewsData(url);
+        QueryNews qn = new QueryNews();
+        List<News> news = qn.fetchNewsData(url, getContext());
         return news;
     }
 }

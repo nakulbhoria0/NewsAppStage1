@@ -41,18 +41,16 @@ public class SettingsActivity extends AppCompatActivity {
 
             String stringValue = newValue.toString();
 
-                        if (preference instanceof ListPreference) {
+            if (preference instanceof ListPreference) {
                 ListPreference lp = (ListPreference) preference;
                 int prefIndex = lp.findIndexOfValue(stringValue);
                 if (prefIndex >= 0) {
                     CharSequence[] labels = lp.getEntries();
                     preference.setSummary(labels[prefIndex]);
                 }
+            } else {
+                preference.setSummary(stringValue);
             }
-                else{
-                    preference.setSummary(stringValue);
-                }
-
 
 
             return true;

@@ -1,5 +1,6 @@
 package com.nakulbhoria.newsappstage1;
 
+import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -21,9 +22,11 @@ import java.util.List;
 public class QueryNews {
 
     public static final String LOG_TAG = QueryNews.class.getSimpleName();
+    private Context context;
 
-    public static List<News> fetchNewsData(String requestUrl) {
+    public List<News> fetchNewsData(String requestUrl, Context context) {
         // Create URL object
+        this.context = context;
         URL url = createUrl(requestUrl);
 
         // Perform HTTP request to the URL and receive a JSON response back
@@ -111,13 +114,8 @@ public class QueryNews {
     }
 
 
-    private static List<News> extractFeatureFromJson(String newsJSON) {
+    private List<News> extractFeatureFromJson(String newsJSON) {
 
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         List<News> news = new ArrayList<>();
 
@@ -136,13 +134,13 @@ public class QueryNews {
                 JSONObject result = resultsArray.getJSONObject(i);
                 JSONArray tags = result.getJSONArray("tags");
                 JSONObject author = null;
-                String authorName = "Author Name: ";
+                String authorName = context.getString(R.string.author_name);
 
                 if (tags != null && tags.length() > 0) {
                     author = tags.getJSONObject(0);
                     authorName += author.getString("webTitle");
                 } else {
-                    authorName += "Not found";
+                    authorName += context.getString(R.string.not_found);
                 }
 
                 String sectionName = result.getString("sectionName");

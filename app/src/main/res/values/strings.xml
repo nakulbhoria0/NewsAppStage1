@@ -48,4 +48,6 @@
     <string name="settings_order_by_most_recent_value" translatable="false">time</string>
     <string name="no_internet">No Internet connection</string>
     <string name="no_news">No News found</string>
+    <string name="author_name">Author Name:</string>
+    <string name="not_found">Not found</string>
 </resources>
